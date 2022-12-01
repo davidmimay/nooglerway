@@ -16,6 +16,10 @@ import { providePerformance,getPerformance } from '@angular/fire/performance';
 import { provideRemoteConfig,getRemoteConfig } from '@angular/fire/remote-config';
 import { provideStorage,getStorage } from '@angular/fire/storage';
 
+// Modules
+import { SharedModule } from './shared/shared.module';
+
+
 @NgModule({
   declarations: [
     AppComponent
@@ -33,7 +37,9 @@ import { provideStorage,getStorage } from '@angular/fire/storage';
     provideMessaging(() => getMessaging()),
     providePerformance(() => getPerformance()),
     provideRemoteConfig(() => getRemoteConfig()),
-    provideStorage(() => getStorage())
+    provideStorage(() => getStorage()),
+    // Modules
+    SharedModule
   ],
   providers: [
     ScreenTrackingService,UserTrackingService
