@@ -4,6 +4,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+// AngularFire Modular
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideAnalytics,getAnalytics,ScreenTrackingService,UserTrackingService } from '@angular/fire/analytics';
@@ -18,6 +20,7 @@ import { provideStorage,getStorage } from '@angular/fire/storage';
 
 // Modules
 import { SharedModule } from './shared/shared.module';
+import { UserModule } from './user/user.module';
 
 
 @NgModule({
@@ -39,10 +42,12 @@ import { SharedModule } from './shared/shared.module';
     provideRemoteConfig(() => getRemoteConfig()),
     provideStorage(() => getStorage()),
     // Modules
-    SharedModule
+    SharedModule,
+    UserModule
   ],
   providers: [
-    ScreenTrackingService,UserTrackingService
+    ScreenTrackingService,
+    UserTrackingService
   ],
   bootstrap: [AppComponent]
 })

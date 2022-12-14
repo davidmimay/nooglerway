@@ -1,0 +1,40 @@
+<div class="profile">
+  <h1>UID: {{ (user | async)?.uid }}</h1>
+  <!-- <div *ngIf="!(afAuth.authState | async)"> -->
+  <div *ngIf="!(user | async)">
+    <h1>Login</h1>
+
+    <button class="google" mat-raised-button appGoogleSignin>Login with Google</button>
+
+  </div>
+
+  <div *ngIf="user | async as user" class="logout">
+    <img class="avatar" [src]="user.photoURL || 'assets/UserDoodle.svg'">
+    
+    <div class="mat-h1">{{ user.displayName }}</div>
+    <div class="mat-h3">Logged in as <strong>{{ user.email }}</strong></div>
+
+    <mat-form-field appearance="outline">
+      <mat-label>shareable link</mat-label>
+      <input matInput value="malamakai.web.app/{{user.uid}}">
+      <button matSuffix mat-icon-button (click)="alertCopy()" cdkCopyToClipboard="malamakai.web.app/{{user.uid}}"><mat-icon>copy</mat-icon></button>
+    </mat-form-field>
+    <div>
+      <button mat-stroked-button routerLink="/{{user.uid}}"><mat-icon>reply</mat-icon>View profile</button>
+      <button mat-stroked-button (click)="auth.signOut()">Logout</button>
+    </div>
+    
+    <mat-tab-group mat-align-tabs="center" color="accent" [selectedIndex]="1">
+      <mat-tab label="✨ Upgrade">
+        <!-- <app-upgrade></app-upgrade>  -->
+      </mat-tab>
+      <mat-tab label="Profile">
+        <!-- <app-edit-profile></app-edit-profile> -->
+      </mat-tab>
+      <mat-tab label="Bio">
+        <app-bio></app-bio>   
+      </mat-tab>
+    </mat-tab-group>
+  
+  </div> 
+</div>
