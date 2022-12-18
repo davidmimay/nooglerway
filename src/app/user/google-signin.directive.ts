@@ -1,7 +1,5 @@
 import { Directive, HostListener, Optional } from '@angular/core';
-import { AngularFireAuth } from '@angular/fire/compat/auth';
-import firebase from '@firebase/app-compat';
-import { Auth, authState, signInAnonymously, signOut, User, GoogleAuthProvider, signInWithPopup } from '@angular/fire/auth';
+import { Auth, GoogleAuthProvider, signInWithPopup } from '@angular/fire/auth';
 
 
 @Directive({

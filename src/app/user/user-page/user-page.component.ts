@@ -1,8 +1,7 @@
 import { Component, Optional } from '@angular/core';
-// import { AngularFireAuth } from '@angular/fire/compat/auth';
-import { Auth, authState, signInAnonymously, signOut, User, GoogleAuthProvider, signInWithPopup } from '@angular/fire/auth';
+import { Auth, getAuth, authState, onAuthStateChanged, signInAnonymously, signOut, User, GoogleAuthProvider, signInWithPopup } from '@angular/fire/auth';
 import { EMPTY, Observable, Subscription } from 'rxjs';
-
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-user-page',
@@ -10,16 +9,17 @@ import { EMPTY, Observable, Subscription } from 'rxjs';
   styleUrls: ['./user-page.component.scss']
 })
 export class UserPageComponent {
-  public readonly user: Observable<User | null> = EMPTY;
+  public user: Observable<User | null> = EMPTY;
+  public url = 'https://' + environment.firebase.projectId + '.web.app';
 
   constructor(
-    @Optional() public auth: Auth
-    // public afAuth: AngularFireAuth,
+    @Optional() public auth: Auth,
   ) {
-    this.user = authState(this.auth);
+    this.user = authState(auth);
   }
 
   alertCopy() {
-     alert(`link copied 👍`);
+     alert(`Link copied 👍`);
   }
+
 }
