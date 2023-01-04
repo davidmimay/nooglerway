@@ -17,18 +17,18 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { ClipboardModule } from '@angular/cdk/clipboard';
 import { MatInputModule } from '@angular/material/input';
 import { RouterModule } from '@angular/router';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 // Maybe unused
 /*
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { DragDropModule } from '@angular/cdk/drag-drop';
-import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { HttpClientModule } from '@angular/common/http';
 // import { YouTubePlayerModule } from "@angular/youtube-player";
 import { MatTooltipModule } from '@angular/material/tooltip';
-import { MatExpansionModule } from '@angular/material/expansion';
-import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatChipsModule } from '@angular/material/chips';
 */
 
@@ -61,16 +61,17 @@ const modules = [
   ClipboardModule,
   MatInputModule,
   RouterModule,
+  MatButtonToggleModule,
+  MatProgressSpinnerModule,
+  MatExpansionModule
   // Maybe unused
   /*
   MatSnackBarModule,
   MatAutocompleteModule,
   DragDropModule,
-  MatProgressSpinnerModule,
   HttpClientModule,
   MatTooltipModule,
-  MatExpansionModule,
-  MatButtonToggleModule,
+  ,
   MatChipsModule,
   */
 ];

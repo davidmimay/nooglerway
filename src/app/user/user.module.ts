@@ -7,12 +7,14 @@ import { UserRoutingModule } from './user-routing.module';
 import { BioComponent } from './bio/bio.component';
 import { UserPageComponent } from './user-page/user-page.component';
 import { GoogleSigninDirective } from './google-signin.directive';
+import { UpgradeComponent } from './upgrade/upgrade.component';
 
 @NgModule({
   declarations: [
     BioComponent,
     UserPageComponent,
-    GoogleSigninDirective
+    GoogleSigninDirective,
+    UpgradeComponent
   ],
   imports: [
     CommonModule,

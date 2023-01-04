@@ -9,7 +9,7 @@
 
   <div *ngIf="user | async as user" class="logout">
     <img class="avatar" [src]="user.photoURL">
-    <div class="mat-h1">{{ user.displayName }}</div>
+    <div class="mat-h1">Hello 👋 <strong>{{ user.displayName }}</strong></div>
     <div class="mat-h3">Logged in as <strong>{{ user.email }}</strong></div>
     <div class="caption">( {{ user.uid }} )</div>
 
@@ -26,7 +26,7 @@
     
     <mat-tab-group mat-align-tabs="center" color="accent" [selectedIndex]="1">
       <mat-tab label="✨ Upgrade">
-        <!-- <app-upgrade></app-upgrade>  -->
+        <app-upgrade></app-upgrade> 
       </mat-tab>
       <!-- <mat-tab label="Profile">
         <app-edit-profile></app-edit-profile>
