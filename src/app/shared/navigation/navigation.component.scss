@@ -1,9 +1,8 @@
+.sidenav {
+  width: 250px;
+}
 .sidenav-container {
   height: 100%;
-}
-
-.sidenav {
-  width: 200px;
 }
 
 .sidenav .mat-toolbar {
@@ -13,5 +12,23 @@
 .mat-toolbar.mat-primary {
   position: sticky;
   top: 0;
-  z-index: 1;
+  z-index: 2;
+}
+
+.avatar {
+  width: 30px;
+  border-radius: 50%;
+  margin: 0 10px -10px;
+}
+
+.fill-space {
+  flex: 1 1 auto;
+}
+
+// TODO Change font for a personalized logo
+.logo {
+  font-size: 1.2em;
+  cursor: pointer;
+  outline: none;
+  font-family: 'Gochi Hand';
 }

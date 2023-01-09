@@ -1,6 +1,6 @@
 <!-- <div *ngIf="!stripeRole"> -->
-
-  <mat-button-toggle-group class="currency" #currency="matButtonToggleGroup" value="usd">
+  <br>
+  <mat-button-toggle-group #currency="matButtonToggleGroup" value="usd">
     <mat-button-toggle value="usd">USD</mat-button-toggle>
     <mat-button-toggle value="eur">EUR</mat-button-toggle>
   </mat-button-toggle-group>
@@ -15,20 +15,20 @@
           <mat-card-subtitle style="white-space: pre-line">{{item.description}}</mat-card-subtitle>
         </mat-card-header>
         <img mat-card-image src={{item.image}}>
-        <mat-card-actions>
+        <mat-card-actions align="end">
           <a mat-raised-button color="accent" (click)="checkout(item.priceId)">{{ item.price }} {{item.currency | uppercase}}/{{ item.interval }}</a>
         </mat-card-actions>
+        <mat-card-footer>
+          <mat-progress-bar *ngIf="isloading" mode="indeterminate"></mat-progress-bar>
+        </mat-card-footer>
       </mat-card>
 
     </ng-container>
-    
-    <mat-spinner *ngIf="isloading" color="accent" class="spinner"></mat-spinner>
-
   </div>
 
 <!-- </div> -->
 
-<div class="width" *ngIf="stripeRole">
+<div *ngIf="stripeRole">
   <h2>Status</h2>
   <ng-container *ngFor="let item of subscriptions">
     <mat-card>
@@ -43,6 +43,7 @@
         <p>Next payment will be on: {{item.nextPayment | date}}</p>
       </mat-card-actions>
     </mat-card>
+    <br>
   </ng-container>
   <a mat-raised-button color="accent" (click)="accessCustomerPortal()">Mannage</a>
 </div>

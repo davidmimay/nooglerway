@@ -106,9 +106,10 @@ export class UpgradeComponent {
           // console.log("Checkout URL: ", checkout.url);
           window.location.assign(checkout.url)
         } else if (checkout.error) {
-          // alert(`An error occured: ${checkout.error.message}`);
+          alert(`🙃 ${checkout.error.message}`);
           console.log("Error: ", checkoutRef.id);
           console.log("Error: ", checkout.error.message);
+          this.isloading = false;
         }
       });      
     }

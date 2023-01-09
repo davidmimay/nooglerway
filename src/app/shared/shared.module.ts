@@ -18,7 +18,7 @@ import { ClipboardModule } from '@angular/cdk/clipboard';
 import { MatInputModule } from '@angular/material/input';
 import { RouterModule } from '@angular/router';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
-import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatExpansionModule } from '@angular/material/expansion';
 
 // Maybe unused
@@ -30,6 +30,8 @@ import { HttpClientModule } from '@angular/common/http';
 // import { YouTubePlayerModule } from "@angular/youtube-player";
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatChipsModule } from '@angular/material/chips';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+
 */
 
 // Components
@@ -62,10 +64,11 @@ const modules = [
   MatInputModule,
   RouterModule,
   MatButtonToggleModule,
-  MatProgressSpinnerModule,
+  MatProgressBarModule,
   MatExpansionModule
   // Maybe unused
   /*
+  MatProgressSpinnerModule,
   MatSnackBarModule,
   MatAutocompleteModule,
   DragDropModule,
