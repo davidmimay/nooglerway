@@ -47,7 +47,7 @@ export class UpgradeComponent {
       priceSnap.forEach(async (doc) => {
         const priceId = doc.id;
         const price: any = await doc.data();
-        // console.log('🛒 PRICE:', price);
+        console.log('🛒 PRICE:', price);
 
         if (price['active'] === true) {
           items.push({
