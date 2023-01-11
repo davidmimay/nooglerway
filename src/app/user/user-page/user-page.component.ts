@@ -10,7 +10,7 @@ import { environment } from 'src/environments/environment';
 })
 export class UserPageComponent {
   public user: Observable<User | null> = EMPTY;
-  public url = 'https://' + environment.firebase.projectId + '.web.app';
+  public url = window.location.origin;
 
   constructor(
     @Optional() public auth: Auth,

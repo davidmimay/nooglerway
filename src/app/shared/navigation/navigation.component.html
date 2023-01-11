@@ -27,11 +27,12 @@
       <span class="fill-space"></span>
       <div *ngIf="!(isHandset$ | async)">
         <a mat-button routerLink="/">Home</a>
-        <a mat-button routerLink="/blog/page">Blog</a>
+        <a mat-button routerLink="/blog/feed">Blog</a>
 
-        <!-- <ng-container *ngFor="let page of pages">
+        <ng-container *ngFor="let page of pages">
           <a mat-button routerLink="blog/page/{{page.id}}">{{page.title}}</a>
-        </ng-container> -->
+        </ng-container>
+
         <!-- <a mat-button routerLink="/youtube">Youtube</a> -->
         <!-- <a mat-button routerLink="/gifts">gifts</a> -->
         <!-- <a mat-button href="https://malamakai.etsy.com/" target="_blank">✨ Shop</a> -->

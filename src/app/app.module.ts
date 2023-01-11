@@ -4,6 +4,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
+
 
 // AngularFire Modular
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
@@ -21,6 +23,7 @@ import { provideStorage,getStorage } from '@angular/fire/storage';
 // Modules
 import { SharedModule } from './shared/shared.module';
 import { UserModule } from './user/user.module';
+import { BlogModule } from './blog/blog.module';
 
 
 @NgModule({
@@ -31,6 +34,8 @@ import { UserModule } from './user/user.module';
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     BrowserAnimationsModule,
+    HttpClientModule,
+    // Angular Fire
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAnalytics(() => getAnalytics()),
     provideAuth(() => getAuth()),
@@ -43,7 +48,8 @@ import { UserModule } from './user/user.module';
     provideStorage(() => getStorage()),
     // Modules
     SharedModule,
-    UserModule
+    UserModule,
+    BlogModule
   ],
   providers: [
     ScreenTrackingService,
