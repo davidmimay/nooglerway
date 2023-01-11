@@ -31,8 +31,7 @@ export class BioComponent implements OnInit {
   ngOnInit() {}
  
   async getProfile(){
-    const auth = getAuth();
-    const user = auth.currentUser;
+    const user = this.auth.currentUser;
     if (user) {
       const uid = user.uid;
       const docRef = doc(this.firestore, 'customers', uid);
@@ -47,9 +46,7 @@ export class BioComponent implements OnInit {
 
   async update(){
     this.message = "Updating...";
-
-    const auth = getAuth();
-    const user = auth.currentUser;
+    const user = this.auth.currentUser;
 
     if (user) {
       const uid = user.uid;

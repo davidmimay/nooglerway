@@ -69,8 +69,7 @@ export class UpgradeComponent {
   // ✅ CHECKOUT
   async checkout(price: string) {
     this.isloading = true // Spinner
-    const auth = getAuth();
-    const user = auth.currentUser;
+    const user = this.auth.currentUser;
     
     const selectedPrice = [{
       price,
@@ -117,8 +116,7 @@ export class UpgradeComponent {
     
   // ✅ GET USER PRODUCTS
   private checkUserProduct() {
-    const auth = getAuth();
-    const user = auth.currentUser;
+    const user = this.auth.currentUser;
     const items: any = [];
     if (user) {
       const uid = user.uid;        
@@ -160,9 +158,8 @@ export class UpgradeComponent {
   // ✅ STRIPE ROLES
   // IMPORTANT: at Stripe dashboard/product add metadata field: 'firebaseRole' and example value: 'premium'
   async getCustomClaimRole() {
-    const auth = getAuth();
-    await auth.currentUser?.getIdToken(true);
-    const decodedToken = await auth.currentUser?.getIdTokenResult();
+    await this.auth.currentUser?.getIdToken(true);
+    const decodedToken = await this.auth.currentUser?.getIdTokenResult();
     console.log('👤 USER ROLE:', decodedToken?.claims['stripeRole']);
     this.stripeRole = decodedToken?.claims['stripeRole'];
     return decodedToken?.claims['stripeRole'] || 'free';
