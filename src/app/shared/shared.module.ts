@@ -20,6 +20,7 @@ import { RouterModule } from '@angular/router';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { MatChipsModule } from '@angular/material/chips';
 
 // Maybe unused
 /*
@@ -29,7 +30,6 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
 import { HttpClientModule } from '@angular/common/http';
 // import { YouTubePlayerModule } from "@angular/youtube-player";
 import { MatTooltipModule } from '@angular/material/tooltip';
-import { MatChipsModule } from '@angular/material/chips';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 */
@@ -37,6 +37,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 // Components
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { NavigationComponent } from './navigation/navigation.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 const components = [
@@ -65,7 +66,8 @@ const modules = [
   RouterModule,
   MatButtonToggleModule,
   MatProgressBarModule,
-  MatExpansionModule
+  MatExpansionModule,
+  MatChipsModule,
   // Maybe unused
   /*
   MatProgressSpinnerModule,
@@ -74,14 +76,13 @@ const modules = [
   DragDropModule,
   HttpClientModule,
   MatTooltipModule,
-  ,
-  MatChipsModule,
   */
 ];
 
 @NgModule({
   declarations: [
     ...components,
+    FooterComponent,
   ],
   imports: [
     ...modules,
