@@ -1,7 +1,6 @@
 import { Component, Optional } from '@angular/core';
 import { Auth, getAuth, authState, onAuthStateChanged, signInAnonymously, signOut, User, GoogleAuthProvider, signInWithPopup } from '@angular/fire/auth';
 import { EMPTY, Observable, Subscription } from 'rxjs';
-import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-user-page',

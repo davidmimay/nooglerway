@@ -21,10 +21,9 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatChipsModule } from '@angular/material/chips';
-
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 // Maybe unused
 /*
-import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { HttpClientModule } from '@angular/common/http';
@@ -68,10 +67,10 @@ const modules = [
   MatProgressBarModule,
   MatExpansionModule,
   MatChipsModule,
+  MatSnackBarModule,
   // Maybe unused
   /*
   MatProgressSpinnerModule,
-  MatSnackBarModule,
   MatAutocompleteModule,
   DragDropModule,
   HttpClientModule,
