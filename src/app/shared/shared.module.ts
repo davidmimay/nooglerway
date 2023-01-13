@@ -38,10 +38,10 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { FooterComponent } from './footer/footer.component';
 
-
 const components = [
   DashboardComponent,
-  NavigationComponent
+  NavigationComponent,
+  FooterComponent,
 ];
 
 const modules = [
@@ -81,7 +81,6 @@ const modules = [
 @NgModule({
   declarations: [
     ...components,
-    FooterComponent,
   ],
   imports: [
     ...modules,
