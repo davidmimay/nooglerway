@@ -1,6 +1,7 @@
 import { Component, Optional } from '@angular/core';
 import { Auth, getAuth, authState, onAuthStateChanged, signInAnonymously, signOut, User, GoogleAuthProvider, signInWithPopup } from '@angular/fire/auth';
 import { EMPTY, Observable, Subscription } from 'rxjs';
+import { SeoService } from 'src/app/shared/seo.service';
 
 @Component({
   selector: 'app-user-page',
@@ -13,12 +14,16 @@ export class UserPageComponent {
 
   constructor(
     @Optional() public auth: Auth,
+    private seo: SeoService
   ) {
     this.user = authState(auth);
+    this.seo.generateTags({ title: 'User', description: 'User page to edit data and mannage payments'});
   }
 
   alertCopy() {
      alert(`Link copied 👍`);
   }
+
+  
 
 }

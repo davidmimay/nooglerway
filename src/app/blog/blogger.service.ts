@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { environment } from './../../environments/environment';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { map } from 'rxjs/operators';
+import { environment } from './../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -12,8 +12,8 @@ export class BloggerService {
   pages: any[] = [];
   posts: any[] = [];
   private blogId: string = '6664790489593253867'; // 🔥 Add your blog ID.
-  private bloggerUrl: string = 'https://www.googleapis.com/blogger/v3'
-  private apikey: string = environment.firebase.apiKey;
+  private bloggerUrl: string = 'https://www.googleapis.com/blogger/v3';
+  private apikey: string = 'AIzaSyDpcqDZQXZD_K3titfTXGHCcJssHUNnE_0'; // environment.firebase.apiKey; // 🔥 Enable Blogger API on GCP
 
   constructor(
     public http:HttpClient,

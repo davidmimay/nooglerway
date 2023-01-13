@@ -15,6 +15,10 @@
       </mat-list-item>
       <mat-divider></mat-divider>
       <a mat-list-item routerLink="/" (click)="drawer.close()">Home</a>
+      <a mat-list-item routerLink="/blog/feed" (click)="drawer.close()">Blog</a>
+      <ng-container *ngFor="let page of pages">
+        <a mat-list-item routerLink="blog/page/{{page.id}}" (click)="drawer.close()">{{page.title}}</a>
+      </ng-container>
     </mat-nav-list>
   </mat-sidenav>
 
@@ -48,13 +52,14 @@
       </button>
       
       <mat-menu #menu="matMenu">
-        <a mat-menu-item href="https://github.com/davidmimay/malamakai" target="_blank">
+        <!-- 🔥 Use your own links -->
+        <a mat-menu-item href="https://github.com/davidmimay/{{app}}" target="_blank">
           <mat-icon>code</mat-icon><span>Code on Github</span>
         </a>
         <a mat-menu-item href="https://climate.stripe.com/W6nkrx" target="_blank">
           <mat-icon>eco</mat-icon><span>Carbon Removal</span>
         </a>
-        <a mat-menu-item href="" target="_blank">
+        <a mat-menu-item href="https://youtube.com/channel/UCjoXaFxfiYpVQo8BGj_Glsg" target="_blank">
           <mat-icon>live_tv</mat-icon><span>YouTube channel</span>
         </a>
       </mat-menu>

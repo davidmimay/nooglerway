@@ -1,14 +1,17 @@
 import { Injectable } from '@angular/core';
 import { Title, Meta } from '@angular/platform-browser';
 import { Router } from '@angular/router';
-import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SeoService {
 
-  constructor(private title: Title, private meta: Meta, private router: Router) { }
+  constructor(
+    private title: Title,
+    private meta: Meta,
+    private router: Router
+  ) { }
 
   generateTags({ title = '', description = '', image = '' }) {
 
@@ -21,7 +24,7 @@ export class SeoService {
       { name: 'og:image', content: image },
       // Twitter Card
       { name: 'twitter:card', content: 'summary' },
-      { name: 'twitter:site', content: '@malamakai' },
+      { name: 'twitter:site', content: '@david_mimay' }, // 🔥 Add your twitter account
     ]);
   }
 }
