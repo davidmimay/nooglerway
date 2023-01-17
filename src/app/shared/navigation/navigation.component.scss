@@ -16,16 +16,16 @@
 }
 
 .avatar {
-  width: 30px;
+  width: 100%;
   border-radius: 50%;
-  margin: 0 10px -10px;
+  margin: 0 0 -10px;
 }
 
 .fill-space {
   flex: 1 1 auto;
 }
 
-// 🔥 Change font for a personalized logo
+// 🔥 Change font-family for a personalized logo
 .logo {
   font-size: 1.2em;
   cursor: pointer;

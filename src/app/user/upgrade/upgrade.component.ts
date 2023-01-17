@@ -3,6 +3,7 @@ import { FirebaseApp } from '@angular/fire/app';
 import { Auth, getAuth } from '@angular/fire/auth';
 import { where, getDocs, addDoc, onSnapshot, collection, doc, Firestore, orderBy, query } from '@angular/fire/firestore';
 import { getFunctions, httpsCallable } from '@angular/fire/functions';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-upgrade',
@@ -145,10 +146,11 @@ export class UpgradeComponent {
     }
   }
 
-  // ✅ CUSTOMER PORTAL  
+  // ✅ CUSTOMER PORTAL
+  // ℹ️ https://firebase.google.com/docs/functions/callable#web-version-9_2
   async accessCustomerPortal() {
     this.isloading = true // Spinner
-    const region = getFunctions(this.app, 'europe-west2');
+    const region = getFunctions(this.app, environment.firebase.locationId);
     const functionRef = await httpsCallable(region, 'ext-firestore-stripe-subscriptions-createPortalLink'); // 🔥 Change 'subscriptions' to 'payments'
     await functionRef({ returnUrl: window.location.origin }) // 'window.location.href' to return to same page, or: `${window.location.origin}/account`})
       .then(({ data }: any) => window.location.assign(data.url))

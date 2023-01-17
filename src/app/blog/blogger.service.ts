@@ -11,9 +11,9 @@ export class BloggerService {
   page: any;
   pages: any[] = [];
   posts: any[] = [];
-  private blogId: string = '6664790489593253867'; // 🔥 Add your blog ID.
+  private blogId: string = environment.google.blogId;
   private bloggerUrl: string = 'https://www.googleapis.com/blogger/v3';
-  private apikey: string = 'AIzaSyDpcqDZQXZD_K3titfTXGHCcJssHUNnE_0'; // environment.firebase.apiKey; // 🔥 Enable Blogger API on GCP
+  private apikey: string = environment.firebase.apiKey; // 🔥 Enable Blogger API on GCP
 
   constructor(
     public http:HttpClient,

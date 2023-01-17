@@ -42,7 +42,7 @@
         <!-- <a mat-button href="https://malamakai.etsy.com/" target="_blank">✨ Shop</a> -->
         
         <a mat-button routerLink="/user" *ngIf="!(user | async) as user">Login</a>
-        <a mat-button routerLink="/user" *ngIf="(user | async) as user">
+        <a mat-mini-fab routerLink="/user" *ngIf="(user | async) as user">
           <img class="avatar" [src]="user.photoURL || 'assets/user.svg'">
         </a>
       </div>

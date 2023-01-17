@@ -30,6 +30,7 @@ export class BioComponent implements OnInit {
 
   ngOnInit() {}
  
+  // ℹ️ https://firebase.google.com/docs/firestore/query-data/get-data#web-version-9_1
   async getProfile(){
     const user = this.auth.currentUser;
     if (user) {
@@ -43,7 +44,7 @@ export class BioComponent implements OnInit {
       return;
     }
   }
-
+  // ℹ️ https://firebase.google.com/docs/firestore/manage-data/add-data#web-version-9_8
   async update(){
     this.message = "Updating...";
     const user = this.auth.currentUser;

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Title, Meta } from '@angular/platform-browser';
 import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -24,7 +25,7 @@ export class SeoService {
       { name: 'og:image', content: image },
       // Twitter Card
       { name: 'twitter:card', content: 'summary' },
-      { name: 'twitter:site', content: '@david_mimay' }, // 🔥 Add your twitter account
+      { name: 'twitter:site', content: environment.google.twitterId },
     ]);
   }
 }

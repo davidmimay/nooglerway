@@ -1,6 +1,6 @@
 import { Component, Optional } from '@angular/core';
-import { Auth, getAuth, authState, onAuthStateChanged, signInAnonymously, signOut, User, GoogleAuthProvider, signInWithPopup } from '@angular/fire/auth';
-import { EMPTY, Observable, Subscription } from 'rxjs';
+import { Auth, authState, User } from '@angular/fire/auth';
+import { EMPTY, Observable } from 'rxjs';
 import { SeoService } from 'src/app/shared/seo.service';
 
 @Component({
