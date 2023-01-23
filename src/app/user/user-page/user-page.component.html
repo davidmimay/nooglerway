@@ -1,6 +1,6 @@
 <div *ngIf="!(user | async)">
   <h1>Login</h1>
-  <button class="google" mat-raised-button appGoogleSignin>Login with Google</button>
+  <button class="google" mat-raised-button appSignin>Login with Google</button>
 </div>
 
 <div *ngIf="user | async as user" class="logout">

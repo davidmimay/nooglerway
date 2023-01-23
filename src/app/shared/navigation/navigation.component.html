@@ -16,6 +16,7 @@
       <mat-divider></mat-divider>
       <a mat-list-item routerLink="/" (click)="drawer.close()">Home</a>
       <a mat-list-item routerLink="/blog/feed" (click)="drawer.close()">Blog</a>
+      <a mat-list-item routerLink="/store" (click)="drawer.close()">Store</a>
       <ng-container *ngFor="let page of pages">
         <a mat-list-item routerLink="blog/page/{{page.id}}" (click)="drawer.close()">{{page.title}}</a>
       </ng-container>
@@ -32,7 +33,7 @@
       <div *ngIf="!(isHandset$ | async)">
         <a mat-button routerLink="/">Home</a>
         <a mat-button routerLink="/blog/feed">Blog</a>
-
+        <a mat-button routerLink="/store">Store</a>
         <ng-container *ngFor="let page of pages">
           <a mat-button routerLink="blog/page/{{page.id}}">{{page.title}}</a>
         </ng-container>

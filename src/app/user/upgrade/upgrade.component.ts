@@ -42,7 +42,7 @@ export class UpgradeComponent {
       const product: any = await doc.data();
       // console.log('🛒 PRODUCT:', product);
 
-      const priceRef = query(collection(this.firestore, 'products', productId, 'prices'), where('active', '==', true), orderBy('unit_amount'));
+      const priceRef = query(collection(this.firestore, 'products', productId, 'prices'), where('active', '==', true), where('type', '==', 'recurring'), orderBy('unit_amount'));
       const priceSnap = await getDocs(priceRef);
 
       priceSnap.forEach(async (doc) => {
@@ -57,6 +57,7 @@ export class UpgradeComponent {
             description: product.description,
             billing_scheme: price['billing_scheme'],
             currency: price['currency'],
+            type: price['type'],
             interval: price['interval'],
             price: ((price['unit_amount'] / 100).toFixed(0)),
             priceId,
@@ -71,12 +72,6 @@ export class UpgradeComponent {
   async checkout(price: string) {
     this.isloading = true // Spinner
     const user = this.auth.currentUser;
-    
-    const selectedPrice = [{
-      price,
-      quantity: 1
-    }];
-
     const id = [];
     for (const prod of this.products) {
       id.push({
@@ -91,9 +86,15 @@ export class UpgradeComponent {
         // automatic_tax: true,
         // tax_id_collection: true,
         // tax_rates: [],
-        collect_shipping_address: false,
+        client: 'web',
+        billing_address_collection: 'auto',
+        payment_method_types: ['card'],
         allow_promotion_codes: true,
-        line_items: selectedPrice,
+        line_items: [{
+          price,
+          quantity: 1
+        }],
+        mode: 'subscription',
         success_url: `${window.location.origin}/success`,// window.location.href,
         cancel_url: `${window.location.origin}/cancel`,
         metadata: { key: 'value'},

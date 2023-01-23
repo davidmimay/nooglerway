@@ -24,6 +24,7 @@ import { provideStorage,getStorage } from '@angular/fire/storage';
 import { SharedModule } from './shared/shared.module';
 import { UserModule } from './user/user.module';
 import { BlogModule } from './blog/blog.module';
+import { StoreModule } from './store/store.module';
 
 
 @NgModule({
@@ -49,7 +50,8 @@ import { BlogModule } from './blog/blog.module';
     // Modules
     SharedModule,
     UserModule,
-    BlogModule
+    BlogModule,
+    StoreModule
   ],
   providers: [
     ScreenTrackingService,

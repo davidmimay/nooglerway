@@ -1,4 +1,4 @@
-import { GoogleSigninDirective } from './google-signin.directive';
+import { SigninDirective } from './signin.directive';
 
 describe('GoogleSigninDirective', () => {
   it('should create an instance', () => {

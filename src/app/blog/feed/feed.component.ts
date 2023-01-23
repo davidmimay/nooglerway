@@ -10,7 +10,7 @@ import { SeoService } from 'src/app/shared/seo.service';
 })
 export class FeedComponent {
 
-  posts: any[] = [];
+  posts: any = [];
 
   constructor(
     private seo: SeoService,
