@@ -1,21 +1,26 @@
-<mat-button-toggle-group #currency="matButtonToggleGroup" value="usd">
-  <mat-button-toggle value="usd">USD</mat-button-toggle>
-  <mat-button-toggle value="eur">EUR</mat-button-toggle>
-</mat-button-toggle-group>
+<div class="center">
+  <mat-button-toggle-group #currency="matButtonToggleGroup" value="usd">
+    <mat-button-toggle value="usd">USD</mat-button-toggle>
+    <mat-button-toggle value="eur">EUR</mat-button-toggle>
+  </mat-button-toggle-group>
+</div>
 
 <div class="grid">
   <ng-container *ngFor="let item of products">
 
     <mat-card *ngIf="item.currency == currency.value">
-      <div *ngFor="let image of item.image">
+      <!-- <div *ngFor="let image of item.image">
         <img mat-card-image [src]="image">
-      </div>
-      <!-- <img mat-card-image [src]="item.image"> -->
+      </div> -->
+
+      <img mat-card-image [src]="item.image[pageIndex]">
+      <mat-paginator (page)="handlePageEvent($event)" [length]="item.image.length" [pageSize]="1" hidePageSize="true"></mat-paginator>
+
       <mat-card-header>
         <mat-card-title>{{item.name}}</mat-card-title>
         <mat-card-subtitle>{{item.description}}</mat-card-subtitle>
       </mat-card-header>
-      <mat-card-content >
+      <mat-card-content>
 
         <mat-chip-listbox>
           <mat-chip *ngFor="let meta of item.metadata | keyvalue">{{meta.key}}: {{meta.value}}</mat-chip>
@@ -24,7 +29,8 @@
       </mat-card-content>
       <mat-card-actions align="end">
         <a mat-raised-button color="accent" (click)="checkout(item.priceId)">{{ item.price }} {{item.currency | uppercase}} {{item.interval}}</a>
-        <a mat-stroked-button href="/product.id">Learn more</a>
+        <!-- <a mat-stroked-button href="/product.id">Learn more</a> -->
+        <!-- <button mat-stroked-button (click)="openDialog()">Learn more</button> -->
       </mat-card-actions>
       <mat-card-footer>
         <mat-progress-bar *ngIf="isloading" mode="indeterminate"></mat-progress-bar>

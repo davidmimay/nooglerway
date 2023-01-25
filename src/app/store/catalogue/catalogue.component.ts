@@ -5,6 +5,9 @@ import { where, getDocs, addDoc, onSnapshot, collection, doc, Firestore, orderBy
 import { getFunctions, httpsCallable } from '@angular/fire/functions';
 import { environment } from 'src/environments/environment';
 import { map } from 'rxjs/operators';
+import { PageEvent } from '@angular/material/paginator';
+import { MatDialog } from '@angular/material/dialog';
+import { ProductComponent } from '../product/product.component';
 
 @Component({
   selector: 'app-catalogue',
@@ -25,10 +28,29 @@ export class CatalogueComponent {
   constructor(
     @Optional() public auth: Auth,
     private readonly firestore: Firestore,
+    public dialog: MatDialog
   ) {
     this.displayProducts();
   }
-  
+
+  // PRODUCT DIALOG
+  openDialog() {
+    const dialogRef = this.dialog.open(ProductComponent, {
+      data: { name: this.products.name }
+    });
+    // dialogRef.afterClosed().subscribe(result => {
+    //   console.log(`Dialog result: ${result}`);
+    // });
+  }
+
+  // ✅ PAGINATOR
+  pageIndex = 0;
+  pageEvent!: PageEvent;
+  public handlePageEvent(e: PageEvent) {
+    this.pageEvent = e;
+    this.pageIndex = e.pageIndex;
+  }
+
   // ✅ DISPLAY PRODUCTS & PRICES
   async displayProducts() {
     const productRef = query(collection(this.firestore, 'products'), where('active', '==', true));
@@ -59,7 +81,8 @@ export class CatalogueComponent {
             price: ((price['unit_amount'] / 100).toFixed(0)),
             priceId,
             metadata: product['metadata'],
-            image: product['images'],
+            // image: product['images'],
+            image: product.images,
           });
         }
       });
