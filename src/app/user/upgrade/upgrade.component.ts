@@ -1,6 +1,6 @@
 import { Component,Optional } from '@angular/core';
 import { FirebaseApp } from '@angular/fire/app';
-import { Auth, getAuth } from '@angular/fire/auth';
+import { Auth, getAuth, onAuthStateChanged } from '@angular/fire/auth';
 import { where, getDocs, addDoc, onSnapshot, collection, doc, Firestore, orderBy, query } from '@angular/fire/firestore';
 import { getFunctions, httpsCallable } from '@angular/fire/functions';
 import { environment } from 'src/environments/environment';
@@ -26,7 +26,7 @@ export class UpgradeComponent {
     private app: FirebaseApp
   ) {
     this.displayProducts();
-    this.checkUserProduct();
+    this.checkUserSubscriptions();
     this.getCustomClaimRole();
   }
   
@@ -35,7 +35,6 @@ export class UpgradeComponent {
     const productRef = query(collection(this.firestore, 'products'), where('active', '==', true));
     const productSnap = await getDocs(productRef);
     const items: any = [];
-
 
     productSnap.forEach(async (doc) => {
       const productId = doc.id;
@@ -116,35 +115,37 @@ export class UpgradeComponent {
     }
   }
     
-  // ✅ GET USER PRODUCTS
-  private checkUserProduct() {
-    const user = this.auth.currentUser;
+  // ✅ GET USER SUBSCRIPTIONS
+  private checkUserSubscriptions() {
     const items: any = [];
-    if (user) {
-      const uid = user.uid;        
-      const subscriptionRef = query(collection(this.firestore, 'customers', uid, 'subscriptions'), where('status', 'in', ['trialing', 'active']));
-      const unsubscribe = onSnapshot(subscriptionRef, (querySnapshot) => {
-        querySnapshot.forEach((doc) => {
-          const subscription = doc.data();
-          console.log('📄 ACTIVE SUBSCRIPTION:', subscription);
+    const auth = getAuth();
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        const uid = user.uid;        
+        const subscriptionRef = query(collection(this.firestore, 'customers', uid, 'subscriptions'), where('status', '==', 'active')); // where('status', 'in', ['trialing', 'active']));
+        const unsubscribe = onSnapshot(subscriptionRef, (querySnapshot) => {
+          querySnapshot.forEach((doc) => {
+            const subscription = doc.data();
+            console.log('📄 ACTIVE SUBSCRIPTION:', subscription);
 
-          items.push({
-            nextPayment: subscription['current_period_end'].seconds * 1000,
-            // status: subscription['status'],
-            // role: subscription['role'],
-            // priceId: subscription['price'].id,
-            interval: subscription['items'][0].plan.interval,
-            currency: subscription['items'][0].plan.currency,
-            price: ((subscription['items'][0].plan.amount / 100).toFixed(0)),
-            name: subscription['items'][0].price.product.name,
-            description: subscription['items'][0].price.product.description,
-            active: subscription['items'][0].price.active,
+            items.push({
+              nextPayment: subscription['current_period_end'].seconds * 1000,
+              // status: subscription['status'],
+              // role: subscription['role'],
+              // priceId: subscription['price'].id,
+              interval: subscription['items'][0].plan.interval,
+              currency: subscription['items'][0].plan.currency,
+              price: ((subscription['items'][0].plan.amount / 100).toFixed(0)),
+              name: subscription['items'][0].price.product.name,
+              description: subscription['items'][0].price.product.description,
+              active: subscription['items'][0].price.active,
+            });
+            
           });
-          
         });
-      });
-      this.subscriptions = items; 
-    }
+        this.subscriptions = items; 
+      }
+    });
   }
 
   // ✅ CUSTOMER PORTAL
