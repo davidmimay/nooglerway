@@ -52,10 +52,10 @@ export class BioComponent implements OnInit {
     if (user) {
       const uid = user.uid;
       const docRef = doc(this.firestore, 'customers', uid);
-      updateDoc(docRef, {        
-        hobbies: this.user.tags,
-        link: this.user.link,
+      updateDoc(docRef, {
         bio: this.user.bio,
+        link: this.user.link,
+        tags: this.user.tags,
       }).then(() => {
         this.message = "Updated";
       }).catch((error) => {

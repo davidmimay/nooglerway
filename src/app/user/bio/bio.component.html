@@ -12,7 +12,7 @@
 
   <mat-form-field appearance="fill">
     <mat-label>Your Hobbies<small><i>(comma separate each hobby)</i></small></mat-label>
-    <textarea matInput class="form-control" rows=6 placeholder="Reading, Travelling, Gaming" [(ngModel)]="user.tags"></textarea>
+    <textarea matInput class="form-control" placeholder="Reading, Travelling, Gaming" [(ngModel)]="user.tags"></textarea>
   </mat-form-field>
 
   <button mat-raised-button (click)="update()">
