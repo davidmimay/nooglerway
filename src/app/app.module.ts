@@ -25,6 +25,9 @@ import { SharedModule } from './shared/shared.module';
 import { UserModule } from './user/user.module';
 import { BlogModule } from './blog/blog.module';
 import { StoreModule } from './store/store.module';
+import { HomeModule } from './home/home.module';
+import { YoutubeModule } from './youtube/youtube.module';
+import { CustomerModule } from './customer/customer.module';
 
 
 @NgModule({
@@ -51,7 +54,10 @@ import { StoreModule } from './store/store.module';
     SharedModule,
     UserModule,
     BlogModule,
-    StoreModule
+    StoreModule,
+    HomeModule,
+    YoutubeModule,
+    CustomerModule
   ],
   providers: [
     ScreenTrackingService,

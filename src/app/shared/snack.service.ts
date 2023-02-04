@@ -22,4 +22,21 @@ export class SnackService {
       .pipe(tap(_ => this.router.navigate(['/user'])))
       .subscribe();
   }
+
+  success(){
+    this.snackBar.open('Sucess', 'OK', {
+      duration: 5000
+    });
+  }
+  getSuccessDetail(info: string) {
+    if (info === 'cardApplication') {
+      this.snackBar.open('Customer Successfully Registered!');
+    }
+    if (info === 'addBank') {
+      this.snackBar.open('Bank Successfully Added to your Account!');
+    }
+    if (info === 'addFunds') {
+      this.snackBar.open('Funds Successfully Added to your Account!');
+    }
+  }
 }

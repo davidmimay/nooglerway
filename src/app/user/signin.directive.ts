@@ -6,7 +6,10 @@ import { Auth, GoogleAuthProvider, signInWithRedirect } from '@angular/fire/auth
 })
 export class SigninDirective {
 
-  constructor(@Optional() private auth: Auth) {}
+  constructor(
+    @Optional() private auth: Auth,
+
+  ) {}
 
   @HostListener('click') onclick() {
     // ℹ️ https://firebase.google.com/docs/auth/web/google-signin#web-version-9_4
@@ -14,7 +17,22 @@ export class SigninDirective {
     // Ask user for google data access
     provider.addScope('https://www.googleapis.com/auth/youtube.readonly')
     // provider.addScope('https://www.googleapis.com/auth/calendar');
-    return signInWithRedirect(this.auth, new GoogleAuthProvider());
+    return signInWithRedirect(this.auth, new GoogleAuthProvider())
+    // update user data
+    // .then((credential) => {this.updateUserData(credential.user)})
   }
+
+  // public updateUserData(user) {
+  //   const userRef: AngularFirestoreDocument<any> = this.afs.doc(`customers/${user.uid}`);
+
+  //   const data: User = {
+  //     uid: user.uid,
+  //     email: user.email,
+  //     roles: {
+  //       subscriber: true
+  //     }
+  //   }
+  //   return userRef.set(data, { merge: true })
+  // }
 
 }
