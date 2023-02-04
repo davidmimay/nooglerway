@@ -3,12 +3,12 @@
     "mimay1": {
       "hosting": {
         "angulartemplate": [
-          "mimay1"
+          "nooglerway"
         ]
       }
     }
   },
   "projects": {
-    "default": "mimay1"
+    "default": "nooglerway"
   }
 }
