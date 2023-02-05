@@ -2,16 +2,17 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { tap } from 'rxjs/operators';
 import { SeoService } from 'src/app/shared/seo.service';
-import { CustomerDataService } from '../customer-data.service';
+// import { CustomerDataService } from '../customer-data.service';
 import { Observable, of } from 'rxjs';
 import { doc, onSnapshot, Firestore } from '@angular/fire/firestore';
 import { getAuth } from "firebase/auth";
 
 @Component({
-  templateUrl: './customer-page.component.html',
-  styleUrls: ['./customer-page.component.scss']
+  selector: 'app-profile',
+  templateUrl: './profile.component.html',
+  styleUrls: ['./profile.component.scss']
 })
-export class CustomerPageComponent implements OnInit {
+export class ProfileComponent implements OnInit {
 
   customerId: any;
   // customer: Observable<any>;
@@ -68,3 +69,4 @@ export class CustomerPageComponent implements OnInit {
   }
 
 }
+

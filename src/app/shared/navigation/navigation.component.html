@@ -18,7 +18,7 @@
       <a mat-list-item routerLink="/blog/feed" (click)="drawer.close()">Blog</a>
       <a mat-list-item routerLink="/store" (click)="drawer.close()">Store</a>
       <a mat-list-item routerLink="/youtube" (click)="drawer.close()">Youtube</a>
-      <a mat-list-item href="#app-catalogue">Catalogue</a>
+      <!-- <a mat-list-item href="#app-action">Join</a> -->
 
       <ng-container *ngFor="let page of pages">
         <a mat-list-item routerLink="blog/page/{{page.id}}" (click)="drawer.close()">{{page.title}}</a>
@@ -35,11 +35,10 @@
       <span class="fill-space"></span>
       <div *ngIf="!(isHandset$ | async)">
         <a mat-button routerLink="/">Home</a>
-        <a mat-button href="#app-catalogue">Catalogue</a>
-
         <a mat-button routerLink="/blog/feed">Blog</a>
         <a mat-button routerLink="/store">Store</a>
         <a mat-button routerLink="/youtube">Youtube</a>
+        <!-- <a mat-button href="#app-action">Join</a> -->
         <ng-container *ngFor="let page of pages">
           <a mat-button routerLink="blog/page/{{page.id}}">{{page.title}}</a>
         </ng-container>
@@ -73,7 +72,6 @@
 
     </mat-toolbar>
     <ng-content></ng-content>
-    <app-catalogue></app-catalogue>
     <app-footer></app-footer>
   </mat-sidenav-content>
 </mat-sidenav-container>

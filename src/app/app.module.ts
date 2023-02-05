@@ -27,8 +27,6 @@ import { BlogModule } from './blog/blog.module';
 import { StoreModule } from './store/store.module';
 import { HomeModule } from './home/home.module';
 import { YoutubeModule } from './youtube/youtube.module';
-import { CustomerModule } from './customer/customer.module';
-
 
 @NgModule({
   declarations: [
@@ -57,7 +55,6 @@ import { CustomerModule } from './customer/customer.module';
     StoreModule,
     HomeModule,
     YoutubeModule,
-    CustomerModule
   ],
   providers: [
     ScreenTrackingService,
