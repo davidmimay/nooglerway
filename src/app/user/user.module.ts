@@ -9,6 +9,7 @@ import { UserPageComponent } from './user-page/user-page.component';
 import { SigninDirective } from './signin.directive';
 import { UpgradeComponent } from './upgrade/upgrade.component';
 import { SubscribeComponent } from './subscribe/subscribe.component';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { SubscribeComponent } from './subscribe/subscribe.component';
     UserPageComponent,
     SigninDirective,
     UpgradeComponent,
-    SubscribeComponent
+    SubscribeComponent,
+    ProfileComponent
   ],
   imports: [
     CommonModule,
