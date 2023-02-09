@@ -17,7 +17,7 @@ export class SigninDirective {
     // Ask user for google data access
     provider.addScope('https://www.googleapis.com/auth/youtube.readonly')
     // provider.addScope('https://www.googleapis.com/auth/calendar');
-    return signInWithRedirect(this.auth, new GoogleAuthProvider())
+    return signInWithRedirect(this.auth, provider)
     // update user data
     // .then((credential) => {this.updateUserData(credential.user)})
   }
