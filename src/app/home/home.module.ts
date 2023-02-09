@@ -7,14 +7,12 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { StoreModule } from '../store/store.module';
 import { ActionComponent } from './action/action.component';
 import { HeaderComponent } from './header/header.component';
-import { ProfileComponent } from './profile/profile.component'
 
 @NgModule({
   declarations: [
     HomePageComponent,
     ActionComponent,
     HeaderComponent,
-    ProfileComponent,
   ],
   imports: [
     CommonModule,
