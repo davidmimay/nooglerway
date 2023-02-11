@@ -34,14 +34,14 @@ export class CatalogueComponent {
   }
 
   // PRODUCT DIALOG
-  openDialog() {
-    const dialogRef = this.dialog.open(ProductComponent, {
-      data: { name: this.products.name }
-    });
-    // dialogRef.afterClosed().subscribe(result => {
-    //   console.log(`Dialog result: ${result}`);
-    // });
-  }
+  // openDialog() {
+  //   const dialogRef = this.dialog.open(ProductComponent, {
+  //     data: { name: this.products.name }
+  //   });
+  //   dialogRef.afterClosed().subscribe(result => {
+  //     console.log(`Dialog result: ${result}`);
+  //   });
+  // }
 
   // ✅ PAGINATOR
   pageIndex = 0;
@@ -81,8 +81,8 @@ export class CatalogueComponent {
             price: ((price['unit_amount'] / 100).toFixed(0)),
             priceId,
             metadata: product['metadata'],
-            // image: product['images'],
             image: product.images,
+            photo: product.photos,
           });
         }
       });

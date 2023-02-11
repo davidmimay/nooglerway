@@ -7,7 +7,7 @@
 	"features": {
 		"ghcr.io/devcontainers-contrib/features/angular-cli:2": {},
 		"ghcr.io/devcontainers-contrib/features/firebase-cli:2": {}
-	}
+	},
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	// "features": {},
@@ -16,7 +16,7 @@
 	// "forwardPorts": [],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	// "postCreateCommand": "yarn install",
+	"postCreateCommand": "nvm use 16"
 
 	// Configure tool-specific properties.
 	// "customizations": {},

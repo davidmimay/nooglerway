@@ -10,12 +10,16 @@
   <ng-container *ngFor="let item of products">
 
     <mat-card *ngIf="item.currency == currency.value">
+      <img mat-card-image [src]="item.image">
+
       <!-- <div *ngFor="let image of item.image">
         <img mat-card-image [src]="image">
       </div> -->
-
-      <img mat-card-image [src]="item.image[pageIndex]">
-      <mat-paginator (page)="handlePageEvent($event)" [length]="item.image.length" [pageSize]="1" hidePageSize="true"></mat-paginator>
+      
+      <ng-container *ngIf="item.photo?.length > 0">
+        <img mat-card-image [src]="item.photo[pageIndex]">
+        <mat-paginator (page)="handlePageEvent($event)" [length]="item.photo.length" [pageSize]="1" hidePageSize="true"></mat-paginator>
+      </ng-container>
 
       <mat-card-header>
         <mat-card-title>{{item.name}}</mat-card-title>
