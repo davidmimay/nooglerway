@@ -63,8 +63,7 @@ export class ProfileComponent implements OnInit {
       console.log(source, " data: ", doc.data());
       this.customer = doc.data(); 
     });
-
+    unsub();
   }
-  
 
 }

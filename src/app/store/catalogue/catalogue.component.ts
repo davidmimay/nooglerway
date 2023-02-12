@@ -34,14 +34,20 @@ export class CatalogueComponent {
   }
 
   // PRODUCT DIALOG
-  // openDialog() {
-  //   const dialogRef = this.dialog.open(ProductComponent, {
-  //     data: { name: this.products.name }
-  //   });
-  //   dialogRef.afterClosed().subscribe(result => {
-  //     console.log(`Dialog result: ${result}`);
-  //   });
-  // }
+  openDialog(priceId: string, name: string, description: string, photo: string) {
+    const dialogRef = this.dialog.open(ProductComponent, {
+      maxWidth: '400px',
+      data: {
+        priceId: priceId,
+        name: name,
+        description: description,
+        photo: photo,
+      }
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
 
   // ✅ PAGINATOR
   pageIndex = 0;
