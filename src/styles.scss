@@ -11,18 +11,18 @@
      
 
 $fonts: mat.define-typography-config(
-  $headline-1: mat.define-typography-level(24px, 32px, 400, $font-family: "Playfair Display"),
-  $headline-2: mat.define-typography-level(24px, 32px, 400, $font-family: "Playfair Display"),
-  $headline-3: mat.define-typography-level(24px, 32px, 400, $font-family: "Playfair Display"),
-  $headline-4: mat.define-typography-level(24px, 32px, 400, $font-family: "Playfair Display"),
+  $headline-1: mat.define-typography-level(112px, 112px, 300, $font-family: "Playfair Display"),
+  $headline-2: mat.define-typography-level(56px, 56px, 400, $font-family: "Playfair Display"),
+  $headline-3: mat.define-typography-level(45px, 48px, 400, $font-family: "Playfair Display"),
+  $headline-4: mat.define-typography-level(34px, 40px, 400, $font-family: "Playfair Display"),
   $headline-5: mat.define-typography-level(24px, 32px, 400, $font-family: "Playfair Display"),
-  $headline-6: mat.define-typography-level(24px, 32px, 400, $font-family: "Playfair Display"),
-  $subtitle-1: mat.define-typography-level(24px, 32px, 400, $font-family: "Playfair Display"),
-  $subtitle-2: mat.define-typography-level(24px, 32px, 400, $font-family: "Playfair Display"),
-  $body-1: mat.define-typography-level(24px, 32px, 400, $font-family: "Playfair Display"),
-  $body-2: mat.define-typography-level(24px, 32px, 400, $font-family: "Playfair Display"),
-  $caption: mat.define-typography-level(24px, 32px, 400, $font-family: "Playfair Display"),
-  $button: mat.define-typography-level(24px, 32px, 400, $font-family: "Playfair Display"),
+  $headline-6: mat.define-typography-level(20px, 32px, 500, $font-family: "Playfair Display"),
+  $subtitle-1: mat.define-typography-level(16px, 28px, 400, $font-family: "Playfair Display"),
+  $subtitle-2: mat.define-typography-level(15px, 24px, 500, $font-family: "Playfair Display"),
+  $body-1: mat.define-typography-level(14px, 24px, 500, $font-family: "Playfair Display"),
+  $body-2: mat.define-typography-level(14px, 20px, 400, $font-family: "Playfair Display"),
+  $caption: mat.define-typography-level(12px, 20px, 400, $font-family: "Playfair Display"),
+  $button: mat.define-typography-level(inherit, 1.125, 400, $font-family: "Playfair Display"),
 );
 
 // $fontConfig: (
@@ -269,6 +269,7 @@ $altTheme: mat.define-dark-theme(
 // Specific component overrides, pieces that are not in line with the general theming
 
 // Handle buttons appropriately, with respect to line-height
+/*
 
 .mat-mdc-raised-button, .mat-mdc-outlined-button, .mat-mdc-flat-button {
   padding: 0 1.15em;
@@ -291,7 +292,7 @@ $altTheme: mat.define-dark-theme(
 }
 
 
-
+*/
 
 // GLOBAL
 
