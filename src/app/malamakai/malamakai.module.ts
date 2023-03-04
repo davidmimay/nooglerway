@@ -4,11 +4,13 @@ import { CommonModule } from '@angular/common';
 import { MalamakaiRoutingModule } from './malamakai-routing.module';
 import { OceanComponent } from './ocean/ocean.component';
 import { SharedModule } from '../shared/shared.module';
+import { PageComponent } from './page/page.component';
 
 
 @NgModule({
   declarations: [
-    OceanComponent
+    OceanComponent,
+    PageComponent
   ],
   imports: [
     CommonModule,

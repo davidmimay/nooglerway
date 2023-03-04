@@ -66,6 +66,16 @@
         <ng-container *ngFor="let page of pages">
           <a mat-button routerLink="blog/page/{{page.id}}">{{page.title}}</a>
         </ng-container>
+        
+        <button mat-button [matMenuTriggerFor]="apps">Apps</button>
+        <mat-menu #apps="matMenu">
+          <button mat-menu-item routerLink="/ethtomars">👾 eth>to_mars</button>
+          <button mat-menu-item routerLink="/caelux">🔋 caelux</button>
+          <button mat-menu-item routerLink="/malamakai">🌱 malamakai</button>
+          <button mat-menu-item routerLink="/xPROJECT">🚙 lamboXPROJECT</button>
+          <button mat-menu-item rrouterLink="/nentei">😌 nentei</button>
+          <button mat-menu-item routerLink="/xtorie">🏠 xtorie</button>
+        </mat-menu>
 
         <!-- <a mat-button routerLink="/youtube">Youtube</a> -->
         <!-- <a mat-button routerLink="/gifts">gifts</a> -->
