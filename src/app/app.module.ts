@@ -23,7 +23,7 @@ import { provideStorage,getStorage } from '@angular/fire/storage';
 // Modules
 import { SharedModule } from './shared/shared.module';
 import { UserModule } from './user/user.module';
-import { BlogModule } from './blog/blog.module';
+import { BloggerModule } from './blogger/blogger.module';
 import { StoreModule } from './store/store.module';
 import { HomeModule } from './home/home.module';
 import { YoutubeModule } from './youtube/youtube.module';
@@ -51,7 +51,7 @@ import { YoutubeModule } from './youtube/youtube.module';
     // Modules
     SharedModule,
     UserModule,
-    BlogModule,
+    BloggerModule,
     StoreModule,
     HomeModule,
     YoutubeModule,

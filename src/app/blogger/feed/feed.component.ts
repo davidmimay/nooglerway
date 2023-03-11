@@ -18,7 +18,7 @@ export class FeedComponent {
     public bloggerService: BloggerService,
   ) {
     this.bloggerService.getBloggerPosts().subscribe(posts => this.posts = posts);
-    this.seo.generateTags({ title: 'Blog Feed', description: 'A feed of blog posts' });
+    this.seo.generateTags({ title: 'Blogger Feed', description: 'A feed of blogger posts' });
   }
 
 }

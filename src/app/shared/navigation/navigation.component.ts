@@ -3,7 +3,7 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { map, shareReplay } from 'rxjs/operators';
 import { Auth, authState, User } from '@angular/fire/auth';
 import { EMPTY, Observable } from 'rxjs';
-import { BloggerService } from 'src/app/blog/blogger.service';
+import { BloggerService } from 'src/app/blogger/blogger.service';
 import { environment } from 'src/environments/environment';
 
 

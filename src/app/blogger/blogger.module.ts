@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { BlogRoutingModule } from './blog-routing.module';
+import { BloggerRoutingModule } from './blogger-routing.module';
 import { SharedModule } from '../shared/shared.module';
 import { FeedComponent } from './feed/feed.component';
 import { PageComponent } from './page/page.component';
@@ -12,8 +12,8 @@ import { PageComponent } from './page/page.component';
   ],
   imports: [
     CommonModule,
-    BlogRoutingModule,
+    BloggerRoutingModule,
     SharedModule
   ]
 })
-export class BlogModule { }
+export class BloggerModule { }
