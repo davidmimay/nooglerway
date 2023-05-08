@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <h1 class="center">ALL POSTS</h1>
 
 <div class="post" *ngFor="let post of posts">
@@ -6,3 +7,15 @@
     <mat-card-content [innerHTML]="post.content"></mat-card-content>
   </mat-card>
 </div>
+=======
+<section>
+  <h1 class="center">ALL POSTS</h1>
+
+  <div class="post" *ngFor="let post of posts">
+    <mat-card appearance="outlined">
+      <mat-card-title class="mat-headline-2">{{post.title}}</mat-card-title>
+      <mat-card-content [innerHTML]="post.content"></mat-card-content>
+    </mat-card>
+  </div>
+</section>
+>>>>>>> update

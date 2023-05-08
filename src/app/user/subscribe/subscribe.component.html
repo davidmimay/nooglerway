@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 <mat-card appearance="outlined">
   
+=======
+<mat-card>
+
+>>>>>>> update
   <mat-card-content *ngIf="youtubeItems?.length > 0; else loading">
     <mat-card-title>Subscribed</mat-card-title>
     <div *ngFor="let item of youtubeItems">
@@ -12,6 +17,7 @@
   <ng-template #loading>
     <mat-card-title>Subscribe</mat-card-title>
     <mat-card-subtitle>To see more content</mat-card-subtitle>
+<<<<<<< HEAD
     <mat-card-actions align="end">
       <a mat-raised-button href="http://www.youtube.com/channel/{{youtubeId}}?sub_confirmation=1" target="_blank">Subscribe</a>
       <button mat-raised-button color="accent" (click)="getYoutuber()"><mat-icon>key</mat-icon>Unlock</button>  
@@ -21,3 +27,31 @@
   </ng-template>
 
 </mat-card>
+=======
+
+    <mat-vertical-stepper [linear]="true" #stepper animationDuration="500">
+      <mat-step label="Subscribe to youtube">
+        <a mat-raised-button href="http://www.youtube.com/channel/{{youtubeId}}?sub_confirmation=1" target="_blank">Subscribe</a>
+        <button mat-button matStepperNext>Next</button>
+      </mat-step>
+      <mat-step label="Allow youtube read-only permission">
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-raised-button (click)="login()">Allow</button>
+        <button mat-button matStepperNext>Next</button>
+      </mat-step>
+      <mat-step label="Unlock features" errorMessage="Subscribe to unlock.">
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-raised-button color="accent" (click)="getYoutuber()"><mat-icon>key</mat-icon>Unlock</button>
+        <mat-divider></mat-divider>
+        <div>
+          <div class="mat-caption">You can revoke permissions at any time</div>
+          <a mat-button (click)="stepper.reset()" href="https://myaccount.google.com/permissions" target="_blank">Revoke</a>
+        </div>
+      </mat-step>
+    </mat-vertical-stepper>
+
+    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+  </ng-template>
+
+</mat-card>
+>>>>>>> update

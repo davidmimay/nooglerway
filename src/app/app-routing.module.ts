@@ -9,6 +9,13 @@ const routes: Routes = [
   { path: 'blogger', loadChildren: () => import('./blogger/blogger.module').then(m => m.BloggerModule), canActivate: [AuthGuard] },
   { path: 'store', loadChildren: () => import('./store/store.module').then(m => m.StoreModule) },
   { path: 'youtube', loadChildren: () => import('./youtube/youtube.module').then(m => m.YoutubeModule) },
+<<<<<<< HEAD
+=======
+  // Apps
+  { path: 'malamakai', loadChildren: () => import('./malamakai/malamakai.module').then(m => m.MalamakaiModule) },
+  // { path: 'ethtomars', loadChildren: () => import('./ethtomars/ethtomars.module').then(m => m.EthtomarsModule) },
+  // { path: 'hydroflorum', loadChildren: () => import('./hydroflorum/hydroflorum.module').then(m => m.HydroflorumModule) },
+>>>>>>> update
   // Stripe
   { path: 'support', component: PaymentComponent },
   { path: 'privacy', component: PaymentComponent },

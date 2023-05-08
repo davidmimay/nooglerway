@@ -11,6 +11,12 @@ import { UpgradeComponent } from './upgrade/upgrade.component';
 import { SubscribeComponent } from './subscribe/subscribe.component';
 import { ProfileComponent } from './profile/profile.component';
 
+<<<<<<< HEAD
+=======
+// Modules
+import { MalamakaiModule } from '../malamakai/malamakai.module';
+
+>>>>>>> update
 @NgModule({
   declarations: [
     BioComponent,
@@ -24,6 +30,10 @@ import { ProfileComponent } from './profile/profile.component';
     CommonModule,
     UserRoutingModule,
     SharedModule,
+<<<<<<< HEAD
+=======
+    MalamakaiModule
+>>>>>>> update
   ]
 })
 export class UserModule { }
