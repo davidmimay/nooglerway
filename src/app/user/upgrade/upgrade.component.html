@@ -6,7 +6,7 @@
   </mat-button-toggle-group>
 
   <div class="grid">
-    
+
     <ng-container *ngFor="let item of products">
 
       <mat-card appearance="outlined" *ngIf="item.currency == currency.value">
@@ -28,20 +28,20 @@
 
 <!-- </div> -->
 
-<div *ngIf="stripeRole">
+<div class="center" *ngIf="stripeRole">
   <h2>Status</h2>
   <ng-container *ngFor="let item of subscriptions">
-    <mat-card appearance="outlined">
+    <mat-card>
       <mat-card-header>
         <mat-icon mat-card-avatar>{{item.active === true ? 'check_circle' : 'highlight_off'}}</mat-icon>
-        <mat-card-title>{{item.name}}</mat-card-title>      
+        <mat-card-title>{{item.name}}</mat-card-title>
         <mat-card-subtitle>{{item.description}}</mat-card-subtitle>
       </mat-card-header>
-      <mat-card-actions>
-        <p>You are paying: {{ item.price }} {{item.currency | uppercase}}/{{ item.interval }}</p>
-        <p>Giving you the role: {{stripeRole}}</p>
-        <p>Next payment will be on: {{item.nextPayment | date}}</p>
-      </mat-card-actions>
+      <mat-card-content>
+        <p>You are paying <mat-chip>{{ item.price }} {{item.currency | uppercase}}/{{ item.interval }}</mat-chip></p>
+        <p>Giving you the role <mat-chip> {{stripeRole}}</mat-chip></p>
+        <p>Next payment will be on <mat-chip>{{item.nextPayment | date}}</mat-chip></p>
+      </mat-card-content>
     </mat-card>
     <br>
   </ng-container>

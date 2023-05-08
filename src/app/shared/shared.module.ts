@@ -26,6 +26,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatDialogModule } from '@angular/material/dialog';
 import { YouTubePlayerModule } from '@angular/youtube-player';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatStepperModule } from '@angular/material/stepper';
 
 // Maybe unused
 /*
@@ -77,6 +78,7 @@ const modules = [
   MatDialogModule,
   YouTubePlayerModule,
   MatTooltipModule,
+  MatStepperModule
   // Maybe unused
   /*
   MatProgressSpinnerModule,

@@ -16,7 +16,7 @@ export class SubscribeComponent {
   public user: Observable<User | null> = EMPTY;
   public youtubeItems: any = [];
   public youtubeId: string = environment.google.youtubeId;
-  
+
   constructor(
     public auth: Auth,
     private seo: SeoService
@@ -40,6 +40,20 @@ export class SubscribeComponent {
       })
       gapi.client.load('youtube', 'v3', () => console.log('loaded youtube'));
     });
+  }
+
+  // ✅ LOGIN WITH CREDENTIAL
+  async login() {
+    const provider = new GoogleAuthProvider()
+    // Ask user for google data access
+    provider.addScope('https://www.googleapis.com/auth/youtube.readonly')
+    // provider.addScope('https://www.googleapis.com/auth/calendar');
+    return signInWithPopup(this.auth, provider);
+  }
+
+  // ✅ LOGOUT
+  logout() {
+    this.auth.signOut();
   }
 
   // ✅ CHECK YOUTUBE STATUS
