@@ -26,10 +26,6 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatDialogModule } from '@angular/material/dialog';
 import { YouTubePlayerModule } from '@angular/youtube-player';
 import { MatTooltipModule } from '@angular/material/tooltip';
-<<<<<<< HEAD
-=======
-import { MatStepperModule } from '@angular/material/stepper';
->>>>>>> update
 
 // Maybe unused
 /*
@@ -81,10 +77,6 @@ const modules = [
   MatDialogModule,
   YouTubePlayerModule,
   MatTooltipModule,
-<<<<<<< HEAD
-=======
-  MatStepperModule
->>>>>>> update
   // Maybe unused
   /*
   MatProgressSpinnerModule,
@@ -108,8 +100,4 @@ const modules = [
 
 })
 
-<<<<<<< HEAD
 export class SharedModule { }
-=======
-export class SharedModule { }
->>>>>>> update

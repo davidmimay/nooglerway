@@ -1,8 +1,0 @@
-<h1>{{title}}</h1>
-<mat-nav-list role="list">
-    <h3 mat-subheader>{{description}}</h3>
-    <mat-list-item *ngFor="let user of customers" [routerLink]="user.id" role="listitem">
-        <!-- <mat-icon [ngStyle]="{'background-color': getRandomColor()}" mat-list-icon>account_box</mat-icon> -->
-        <h3>⛱ {{ user.displayName }}</h3>
-    </mat-list-item>
-</mat-nav-list>

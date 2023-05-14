@@ -27,10 +27,6 @@ import { BloggerModule } from './blogger/blogger.module';
 import { StoreModule } from './store/store.module';
 import { HomeModule } from './home/home.module';
 import { YoutubeModule } from './youtube/youtube.module';
-<<<<<<< HEAD
-=======
-import { MalamakaiModule } from './malamakai/malamakai.module';
->>>>>>> update
 
 @NgModule({
   declarations: [
@@ -59,10 +55,6 @@ import { MalamakaiModule } from './malamakai/malamakai.module';
     StoreModule,
     HomeModule,
     YoutubeModule,
-<<<<<<< HEAD
-=======
-    MalamakaiModule
->>>>>>> update
   ],
   providers: [
     ScreenTrackingService,

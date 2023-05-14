@@ -1,9 +1,5 @@
 import { Component } from '@angular/core';
-<<<<<<< HEAD
 import { RemoteConfig, getValue, fetchAndActivate } from '@angular/fire/remote-config';
-=======
-import { getValue, RemoteConfig, fetchAndActivate } from '@angular/fire/remote-config';
->>>>>>> update
 
 @Component({
   selector: 'app-header',
@@ -17,10 +13,7 @@ export class HeaderComponent {
   homeAction: any;
 
   constructor(remoteConfig: RemoteConfig) {
-<<<<<<< HEAD
 
-=======
->>>>>>> update
     fetchAndActivate(remoteConfig)
     .then(() => {
       this.homeTitle = getValue(remoteConfig, 'homeTitle');
@@ -30,12 +23,7 @@ export class HeaderComponent {
     .catch((err) => {
       console.log('Error:', err)
     });
-<<<<<<< HEAD
 
   }
 
 }
-=======
-  }
-}
->>>>>>> update

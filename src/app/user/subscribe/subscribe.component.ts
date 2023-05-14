@@ -16,11 +16,7 @@ export class SubscribeComponent {
   public user: Observable<User | null> = EMPTY;
   public youtubeItems: any = [];
   public youtubeId: string = environment.google.youtubeId;
-<<<<<<< HEAD
   
-=======
-
->>>>>>> update
   constructor(
     public auth: Auth,
     private seo: SeoService
@@ -46,23 +42,6 @@ export class SubscribeComponent {
     });
   }
 
-<<<<<<< HEAD
-=======
-  // ✅ LOGIN WITH CREDENTIAL
-  async login() {
-    const provider = new GoogleAuthProvider()
-    // Ask user for google data access
-    provider.addScope('https://www.googleapis.com/auth/youtube.readonly')
-    // provider.addScope('https://www.googleapis.com/auth/calendar');
-    return signInWithPopup(this.auth, provider);
-  }
-
-  // ✅ LOGOUT
-  logout() {
-    this.auth.signOut();
-  }
-
->>>>>>> update
   // ✅ CHECK YOUTUBE STATUS
   async getYoutuber() {
     await gapi.client.load("youtube", "v3");

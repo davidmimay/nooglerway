@@ -1,25 +1,14 @@
 {
   "targets": {
-<<<<<<< HEAD
     "nooglerway": {
       "hosting": {
         "nooglerway": [
           "nooglerway"
-=======
-    "occupymars": {
-      "hosting": {
-        "occupymars": [
-          "occupymars"
->>>>>>> update
         ]
       }
     }
   },
   "projects": {
-<<<<<<< HEAD
     "default": "nooglerway"
-=======
-    "default": "occupymars"
->>>>>>> update
   }
 }
